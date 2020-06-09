@@ -11,6 +11,9 @@ class char():
         self.health = health
         self.power = power
  
+    def __repr__(self):
+        return "character"
+
     def attack(self, opponent):
         opponent.health -= self.power
 
@@ -20,17 +23,30 @@ class char():
         else:
             return False
 
+    def status(self):
+        print(f'The {self.__class__.__name__} has {self.health} health and {self.power} power.')
 
-hero = char(10, 5)
-goblin = char(6, 2)
+class Hero(char):
+    def __repr__(self):
+        return "Hero"
+    
+class Goblin(char):
+    def __repr__(self):
+        return "goblin"
+
+
+hero = Hero(10, 5)
+goblin = Goblin(6, 2)
 
 
 
 def main():
 
     while goblin.alive() and hero.alive():
-        print(f"\nYou have {hero.health} health and {hero.power} power.")
-        print(f"The goblin has {goblin.health} health and {goblin.power} power.")
+        hero.status()
+        goblin.status()
+        # print(f"\nYou have {hero.health} health and {hero.power} power.")
+        # print(f"The goblin has {goblin.health} health and {goblin.power} power.")
         print()
         print("What do you want to do?")
         print("1. fight goblin")
