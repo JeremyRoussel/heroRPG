@@ -14,6 +14,13 @@ class char():
     def attack(self, opponent):
         opponent.health -= self.power
 
+    def alive(self):
+        if self.health > 0:
+            return True
+        else:
+            return False
+
+
 hero = char(10, 5)
 goblin = char(6, 2)
 
@@ -21,8 +28,8 @@ goblin = char(6, 2)
 
 def main():
 
-    while goblin.health > 0 and hero.health > 0:
-        print(f"You have {hero.health} health and {hero.power} power.")
+    while goblin.alive() and hero.alive():
+        print(f"\nYou have {hero.health} health and {hero.power} power.")
         print(f"The goblin has {goblin.health} health and {goblin.power} power.")
         print()
         print("What do you want to do?")
@@ -31,13 +38,14 @@ def main():
         print("3. flee")
         print("> ", end=' ')
         raw_input = input()
+
         if raw_input == "1":
             hero.attack(goblin)
             print(f"You do {hero.power} damage to the goblin.")
-            if goblin.health <= 0:
-                print("The goblin is dead.")
+
         elif raw_input == "2":
             pass
+
         elif raw_input == "3":
             print("Goodbye.")
             break
@@ -47,8 +55,10 @@ def main():
         if goblin.health > 0:
             goblin.attack(hero)
             print(f"The goblin does {goblin.power} damage to you.")
-            if hero.health <= 0:
-                print("You are dead.")
 
+    if hero.health <= 0:
+        print("You are dead.")
+    if goblin.health <= 0:
+        print("The goblin is dead.")
 
 main()
