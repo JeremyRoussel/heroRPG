@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # In this simple RPG game, the hero fights the goblin. He has the options to:
 
@@ -16,6 +16,7 @@ class char():
 
     def attack(self, opponent):
         opponent.health -= self.power
+        print(f'The {self.__class__.__name__} deals {self.power} damage to the {opponent.__class__.__name__}.')
 
     def alive(self):
         if self.health > 0:
@@ -43,12 +44,10 @@ goblin = Goblin(6, 2)
 def main():
 
     while goblin.alive() and hero.alive():
+        print()
         hero.status()
         goblin.status()
-        # print(f"\nYou have {hero.health} health and {hero.power} power.")
-        # print(f"The goblin has {goblin.health} health and {goblin.power} power.")
-        print()
-        print("What do you want to do?")
+        print("\nWhat do you want to do?")
         print("1. fight goblin")
         print("2. do nothing")
         print("3. flee")
@@ -57,7 +56,6 @@ def main():
 
         if raw_input == "1":
             hero.attack(goblin)
-            print(f"You do {hero.power} damage to the goblin.")
 
         elif raw_input == "2":
             pass
@@ -70,7 +68,6 @@ def main():
 
         if goblin.health > 0:
             goblin.attack(hero)
-            print(f"The goblin does {goblin.power} damage to you.")
 
     if hero.health <= 0:
         print("You are dead.")
