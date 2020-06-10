@@ -3,6 +3,8 @@ class char():
         self.health = health
         self.power = power
         self.wallet = 0
+        self.armor = 0
+        self.items = []
  
     def attack(self, opponent):
         opponent.defense(self.power)
@@ -18,4 +20,4 @@ class char():
         print(f'The {self.__class__.__name__} has {self.health} health and {self.power} power.')
 
     def defense(self, damage):
-        self.health -= damage
+        self.health -= damage - self.armor

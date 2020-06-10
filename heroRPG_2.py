@@ -9,6 +9,7 @@
 import random
 from char import char
 from char_list import *
+from baddies import Goblin
 from shop import shop
 from cave import cave
 
@@ -48,13 +49,13 @@ def main():
 1. Talk to Tavern Barkeep
 2. Shop
 3. Explore Cave
-4. Have a drink
+4. Use items
 5. Sleep
 6. Quit
 > ''')
 
         if direction == '1':
-            print('\nWelcome visitor! Here you can have a drink, go shopping, take a rest, or go explore the abandoned cave outside of town!\n')
+            print('\nWelcome visitor! Here you can use items, go shopping, take a rest, or go explore the abandoned cave outside of town!\n')
         
         if direction == '2':
             shop(hero)

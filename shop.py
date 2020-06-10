@@ -20,16 +20,17 @@ def shop(char):
 
         try:
             if char.wallet >= item_list[selection][1]:
-                if selection == 'Sword':
-                    char.power += 2
-                    print(f'{char.__class__.__name__}\'s power increased by 2')
+                # if selection == 'Sword':
+                #     char.power += 2
+                #     print(f'{char.__class__.__name__}\'s power increased by 2')
 
-                if selection == 'Tonic':
-                    char.health += 10
-                    print(f'{char.__class__.__name__}\'s health increased by 10')
+                # if selection == 'Tonic':
+                #     char.health += 10
+                #     print(f'{char.__class__.__name__}\'s health increased by 10')
                     
                 item_list[selection][0] -= 1
                 char.wallet -= item_list[selection][1]
+                char.items.append(selection)
                 if item_list[selection][0] == 0:
                     del item_list[selection]
             else:

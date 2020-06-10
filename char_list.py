@@ -1,20 +1,6 @@
 import random
 from char import char
 
-class Goblin(char):
-    def __init__(self, health, power):
-        self.bounty = 5
-        super(Goblin, self).__init__(health, power)
-    pass
-
-class Zombie(char):
-    def __init__(self, health, power):
-        self.bounty = 10
-        super(Zombie, self).__init__(health, power)
-
-    def alive(self):
-        return True
-
 class Warrior(char):
     def attack(self, opponent):
         

@@ -1,15 +1,21 @@
 import random
 from char import char
-from char_list import Zombie, Goblin
+from baddies import *
 
 def cave(hero):
 
     enemy_selector = random.randint(1,20)
 
-    if enemy_selector == 20:
+    if enemy_selector > 18:
         enemy = Zombie(-1, 1)
-    else:
+    elif enemy_selector > 12:
         enemy = Goblin(6, 2)
+    elif enemy_selector > 6:
+        enemy = Slime(12, 1)
+    else:
+        enemy = Skeleton(8, 3)
+
+    print(f'\nYou encounter a {enemy.__class__.__name__}!')
 
 
     while enemy.alive() and hero.alive():
