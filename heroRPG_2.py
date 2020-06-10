@@ -51,8 +51,7 @@ def main():
 2. Shop
 3. Explore Cave
 4. Use items
-5. Sleep
-6. Quit
+5. Quit
 > ''')
 
         if direction == '1':
@@ -66,11 +65,8 @@ def main():
         
         if direction == '4':
             use_items(hero)
-        
+               
         if direction == '5':
-            pass
-        
-        if direction == '6':
             break
 
 
