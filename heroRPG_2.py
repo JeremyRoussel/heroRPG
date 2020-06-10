@@ -12,6 +12,7 @@ from char_list import *
 from baddies import Goblin
 from shop import shop
 from cave import cave
+from use_items import *
 
 
 heros = {'1':1, '2':2, '3':3, '4':4, '5':5, '10':10}
@@ -64,7 +65,7 @@ def main():
             cave(hero)
         
         if direction == '4':
-            pass
+            use_items(hero)
         
         if direction == '5':
             pass

@@ -1,6 +1,7 @@
 import random
 from char import char
 from baddies import *
+from use_items import *
 
 def cave(hero):
 
@@ -24,8 +25,9 @@ def cave(hero):
         enemy.status()
         print("\nWhat do you want to do?")
         print(f"1. Fight {enemy.__class__.__name__}")
-        print("2. Do nothing")
-        print("3. Flee")
+        print("2. Use Item")
+        print("3. Do nothing")
+        print("4. Flee")
         print("> ", end=' ')
         raw_input = input()
 
@@ -33,9 +35,12 @@ def cave(hero):
             hero.attack(enemy)
 
         elif raw_input == "2":
-            pass
+            use_items(hero)
 
         elif raw_input == "3":
+            pass
+
+        elif raw_input == "4":
             print("Goodbye.")
             break
         else:
