@@ -1,4 +1,5 @@
 import random
+import time
 
 # Main character class defintion and functions
 
@@ -25,6 +26,7 @@ class char():
 
     # Status method to display attributes
     def status(self):
+        time.sleep(.4)
         print(f'The {self.__class__.__name__} has {self.health} health, {self.power} power, {self.wallet} coins, {self.armor} armor, {20 - self.evade} evade points and {self.items} items.')
 
     # Defense method to determine how damage applies
@@ -40,6 +42,8 @@ class char():
             else:
                 fd = damage - self.armor
             self.health -= fd
+            time.sleep(.4)
             print(f'The {self.__class__.__name__} took {fd} damage')
         else:
+            time.sleep(.4)
             print('Damage Evaded!')

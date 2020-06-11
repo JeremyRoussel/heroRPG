@@ -1,3 +1,5 @@
+import time
+
 def shop(char):
     
     # Future shop improvements: use file load from outside list at start to manage total items available
@@ -20,7 +22,9 @@ def shop(char):
         # Print available items, then select an item
 
         for key in item_list:
+            time.sleep(.2)
             print(f'{key} ({item_list[key][1]} coins)')
+        time.sleep(.2)
         print(f'Nothing')
         selection = input('> ')
 
@@ -39,6 +43,7 @@ def shop(char):
                     del item_list[selection]
             # Not enough money
             else:
+                time.sleep(.2)
                 print('Not enough money!')
         except:
             pass

@@ -1,14 +1,16 @@
 import random
 from char import char
+import time
 
 class Warrior(char):
     
     # Redefine attack method in child to enable critical hit option of Warrior class
     def attack(self, opponent):
-        
+        time.sleep(.2)
         if random.randint(1,20) > 15:
             damage = self.power*2
             print('Critical Hit!')
+            time.sleep(.4)
         else:
             damage = self.power
         
@@ -20,17 +22,20 @@ class Medic(char):
 
     # Redefine defense method in child to enable heal option of Medic class (no evade as a result)
     def defense(self, damage):
+        time.sleep(.2)
         self.health -= damage
         # Medic's chance to heal
         chance = random.randint(1,20)
         if self.health > 0 and chance > 15:
             print('Cleric healed!')
+            time.sleep(.4)
             self.health += 2
 
 class Shadow(char):
 
     # Redefine defense method in child to enable evade chance option of Shadow class (no evade from char parent class as a result)
     def defense(self, damage):
+        time.sleep(.2)
         #Shadow can only be hit 1/10 times
         chance = random.randint(1,20)
         if chance < 3:

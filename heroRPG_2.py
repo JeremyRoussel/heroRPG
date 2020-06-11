@@ -8,19 +8,31 @@ from baddies import Goblin
 from shop import shop
 from cave import cave
 from use_items import *
+import time
 
 # Hero selection!
 heros = {'1':1, '2':2, '3':3, '4':4, '5':5, '10':10}
 hero_choice = '0'
 while hero_choice not in heros:
-    print('You awake in a tavern and look upon yourself in the mirror. What do you see?')
-    hero_choice = input('''
-1. Warrior
-2. Wizard
-3. Elf
-4. Medic
-5. Shadow
-> ''')
+    print('\nYou awake in a tavern and look upon yourself in the mirror. What do you see?')
+    time.sleep(.3)
+    print('*************************************')
+    time.sleep(.3)
+    print('* 1. Warrior      ____              *')
+    time.sleep(.3)
+    print('* 2. Wizard      /\  .\    _____    *')
+    time.sleep(.3)
+    print('* 3. Elf        /: \___\  / .  /\   *')
+    time.sleep(.3)
+    print("* 4. Medic      \ '/.. / /____/..\  *")
+    time.sleep(.3)
+    print("* 5. Shadow      \/___/  \ '' \ '/  *")
+    time.sleep(.3)
+    print("*                         \_''_\/   *")
+    time.sleep(.3)
+    print("*************************************")
+    time.sleep(.3)
+    hero_choice = input('> ')
 
 # Default values, future difficulty adjustments?
 h_in = 10
@@ -45,28 +57,56 @@ def main():
 
     # Wat do?
     while True:
-        direction = input('''\nWhat do you want to do?
-1. Talk to Tavern Barkeep
-2. Shop
-3. Explore Cave
-4. Use items
-5. Quit
-> ''')
+        time.sleep(.3)
+        print()
+        print('**********************************')
+        time.sleep(.3)
+        print('* What do you want to do?        *')
+        time.sleep(.3)
+        print('* 1. Talk to Tavern Barkeep      *')
+        time.sleep(.3)
+        print('* 2. Shop                        *')
+        time.sleep(.3)
+        print('* 3. Explore Cave                *')
+        time.sleep(.3)
+        print('* 4. Use Items                   *')
+        time.sleep(.3)
+        print('* 5. Quit                        *')
+        time.sleep(.3)
+        print('**********************************')
+        direction = input('> ')
 
         # Game info
         if direction == '1':
+            time.sleep(.3)
             print('\nWelcome visitor! Here you can use items, go shopping, take a rest, or go explore the abandoned cave outside of town!\n')
-        
+            time.sleep(1)
+            print('''Have a drink on the house!
+
+    _.._..,_,_
+   (          )
+    ]~,"-.-~~[
+  .=])' (;  ([
+  | ]:: '    [
+  .=]): .)  ([
+    |:: '    |
+     ~~----~~
+     ''')
+            time.sleep(1)
+
         # Go shopping
         if direction == '2':
+            time.sleep(.3)
             shop(hero)
         
         # Go fighting
         if direction == '3':
+            time.sleep(.3)
             cave(hero)
         
         # Use items
         if direction == '4':
+            time.sleep(.3)
             use_items(hero)
         
         # Leave (sad face)
